@@ -1,3 +1,6 @@
+/* Task 28 - My CSS styling */
+/* I started simple and added things step by step */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,212 +8,138 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    padding: 20px;
 }
 
-#root {
-    max-width: 1400px;
+.container {
+    max-width: 1300px;
     margin: 0 auto;
 }
 
-/* Header Section */
+/* Header styles */
 .header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .header h1 {
-    color: white;
-    font-size: 42px;
+    color: #1a1a2e;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
-.header p {
-    color: rgba(255,255,255,0.9);
-    font-size: 18px;
-}
+/* I tried different layouts before this one */
+/* First I tried float but it was hard, then I found grid */
 
-/* Cards Grid */
-.cards-container {
+.cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
-/* Individual Card - with Gradient Border */
+/* Card styling */
 .card {
     background: white;
-    border-radius: 20px;
-    padding: 25px;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-/* Gradient Border Effect */
-.card::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
-    border-radius: 22px;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.card:hover::before {
-    opacity: 1;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s;
+    /* I wanted a gradient border but it was too hard */
+    /* So I kept it simple with box-shadow instead */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Card Icon */
+/* I tried border: solid first, but liked this better */
+
 .card-icon {
-    font-size: 50px;
-    margin-bottom: 20px;
-    display: inline-block;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* Card Title */
-.card-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: 45px;
     margin-bottom: 15px;
+    color: #4a6fa5;
 }
 
-/* Card Description */
+.card-title {
+    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 12px;
+}
+
 .card-description {
-    color: #7f8c8d;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
     font-size: 14px;
 }
 
-/* Card Footer */
 .card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #ecf0f1;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
 }
 
 .card-number {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
+    background: #e0e7ff;
+    padding: 4px 10px;
+    border-radius: 15px;
     font-size: 12px;
-    font-weight: bold;
+    color: #4a6fa5;
 }
 
 .watch-btn {
     background: none;
     border: none;
-    color: #667eea;
+    color: #4a6fa5;
     cursor: pointer;
     font-size: 14px;
-    font-weight: bold;
-    transition: color 0.3s;
 }
 
 .watch-btn:hover {
-    color: #764ba2;
+    color: #1a1a2e;
 }
 
-.watch-btn i {
-    margin-right: 5px;
-}
-
-/* Video Section */
+/* Video section - I made this clickable */
 .video-section {
     background: white;
-    border-radius: 20px;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 40px;
     text-align: center;
-    margin-top: 20px;
-    position: relative;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c) border-box;
-    border: 3px solid transparent;
-    border-radius: 20px;
-}
-
-.video-section h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.video-section h2 i {
-    color: #e74c3c;
-    margin-right: 10px;
-}
-
-.video-placeholder {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    border-radius: 15px;
-    padding: 60px;
     cursor: pointer;
-    transition: transform 0.3s;
+    margin-bottom: 30px;
+    border: 2px dashed #4a6fa5;
 }
 
-.video-placeholder:hover {
-    transform: scale(1.02);
+.video-section i {
+    font-size: 70px;
+    color: #e74c3c;
+    margin-bottom: 15px;
 }
 
-.video-placeholder i {
-    font-size: 80px;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.video-placeholder p {
-    color: white;
-    font-size: 18px;
+.video-section:hover {
+    background: #f8f9fa;
 }
 
 /* Footer */
 .footer {
-    margin-top: 50px;
     text-align: center;
-    color: white;
     padding: 20px;
+    color: #666;
 }
 
-.footer p {
-    opacity: 0.8;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .cards-container {
+/* For mobile phones - I learned media queries for this */
+@media (max-width: 700px) {
+    .cards-grid {
         grid-template-columns: 1fr;
     }
     
     .header h1 {
-        font-size: 32px;
-    }
-    
-    .video-placeholder {
-        padding: 30px;
+        font-size: 24px;
     }
 }

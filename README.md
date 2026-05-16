@@ -1,34 +1,30 @@
-# Task 28 - React Props (MERN Stack)
+# Task 28 - React Props
 
-## Project Files
-- `index.html` - Main HTML file
-- `style.css` - All styling including gradient borders
-- `app.js` - React components with Props
-- `README.md` - Documentation
+## Assignment: Learning React Props with Reusable Components
+---
 
-## How to Run
-1. Save all 4 files in the same folder
-2. Open `index.html` in your browser
-3. View 12 cards with gradient borders
+## WHAT I LEARNED ABOUT PROPS
 
+Before this task, I didn't know what props meant in React. Now I understand.
 
-## Features Implemented
-### ✅ Main Requirements
-1. **Reusable Card Component** - Single Card component used 12 times
-2. **Props Implementation** - Data passed via props from array
-3. **Gradient Border** - Each card has gradient border on hover
+**Props = Properties** that we pass from a parent component to a child component.
 
-### ✅ Additional Features
-- Each card has: Title, Description, Card Number, Icon
-- Click "Watch Video" button on any card
-- Click video section to play tutorial
-- Responsive grid layout
-- Smooth hover animations
+### How I explain props in my own words:
 
-## How Props are Used
+Props are like arguments you pass to a function. When I call a function, I pass data to it. When I use a React component, I pass props to it. The component receives those props and uses them to show different content.
 
-### Card Component (Reusable)
+### Simple example I understand:
+
 ```javascript
-function Card({ title, description, cardNumber, icon }) {
-    // Component using props
+// This is the child component - it receives props
+function Card({ title, description }) {
+    return (
+        <div>
+            <h2>{title}</h2>
+            <p>{description}</p>
+        </div>
+    );
 }
+
+// This is the parent - it sends props
+<Card title="Card 1" description="This is my first card" />
